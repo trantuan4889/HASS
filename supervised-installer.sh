@@ -204,7 +204,9 @@ cat > "$CONFIG" <<- EOF
     "data": "${DATA_SHARE}"
 }
 EOF
-
+info "${HASSIO_DOCKER}",
+info "${MACHINE}",
+info "${DATA_SHARE}",
 ##
 # Pull supervisor image
 info "Install supervisor Docker container"
