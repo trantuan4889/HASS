@@ -113,7 +113,7 @@ if [[ "$answer" =~ "y" ]] || [[ "$answer" =~ "Y" ]]; then
 fi
 
 info "Restarting NetworkManager"
-# systemctl restart "${SERVICE_NM}"
+systemctl restart "${SERVICE_NM}"
 
 # Parse command line parameters
 while [[ $# -gt 0 ]]; do
@@ -204,9 +204,10 @@ cat > "$CONFIG" <<- EOF
     "data": "${DATA_SHARE}"
 }
 EOF
-info "${HASSIO_DOCKER}",
-info "${MACHINE}",
-info "${DATA_SHARE}",
+info "${HASSIO_DOCKER}"
+info "${MACHINE}"
+info "${DATA_SHARE}"
+info "$URL_VERSION"
 ##
 # Pull supervisor image
 info "Install supervisor Docker container"
